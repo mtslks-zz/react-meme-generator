@@ -2,13 +2,14 @@
 import { css } from '@emotion/react';
 import { useState } from 'react';
 
+// this will be styled later with @emotion
 function Header() {
   return (
-    <div>
-      <h1>Generate Your Custom Meme</h1>
-      <br />
-      <h2>Express yourself by filling the two blank fields</h2>
-    </div>
+    <body>
+      <div>
+        <h2>Generate Your Custom Meme</h2>
+      </div>
+    </body>
   );
 }
 

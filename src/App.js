@@ -1,14 +1,15 @@
 import './App.css';
-import { css } from '@emotion/react';
-import { useState } from 'react';
-import Header from './Header';
+// import { css } from '@emotion/react';
+// import { useState } from 'react';
+import axios from 'axios';
+import Header from './Header.js';
+import Memegenerator from './Memegenerator.js';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      {/*       <Memeframe />
-      <Memegenerator /> */}
+      <Memegenerator />
     </div>
   );
 }
