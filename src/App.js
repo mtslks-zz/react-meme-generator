@@ -8,7 +8,7 @@ function Memegenerator() {
 
   // template / target URL for customized meme
   const [customizedMeme, setCustomizedMeme] = useState(
-    'https://api.memegen.link/images/morpheus/click_wisely/i_am_about_to_generate_your_meme',
+    'https://api.memegen.link/images/morpheus/click_wisely/i´m_about_to_generate_your_meme',
   );
   const [memeArray, setMemeArray] = useState([]); // empty array to save objects from templates
   const [imageTemplate, setImageTemplate] = useState('morpheus');
@@ -43,25 +43,23 @@ function Memegenerator() {
     setImageTemplate(event.currentTarget.value);
   };
 
-  // we need to replace textTop & textBottom with something that changes it into adding "_" between the words
-  const newTextTop = textTop.split(' ').join('_');
-  const newTextBottom = textBottom.split(' ').join('_');
-
   // onChangeCustomize = function to generate new URL for custom meme
   const onChangeCustomize = () => {
     setCustomizedMeme(
-      `https://api.memegen.link/images/${imageTemplate}/${newTextTop}/${newTextBottom}.png`,
+      `https://api.memegen.link/images/${imageTemplate}/${textTop}/${textBottom}.png`,
     );
   };
 
+  // Rendering of the app
   return (
     <div>
-      <h1>React Meme Generator</h1>
+      <h1>Very basic looking React Meme Generator</h1>
       <div>
         <label htmlFor="imageTemplate">Template meme: </label>
         <select
           id="image"
-          placeholder="template meme"
+          placeholder="template image"
+          // displays image, will show new image on change
           value={imageTemplate}
           onChange={onChangeImageTemplate}
         >
@@ -79,12 +77,12 @@ function Memegenerator() {
         value={textBottom}
         onChange={onChangeTextBottom}
       />
-
+      <p />
       <div>
-        <button click={onChangeCustomize}>I want my new meme!</button>
+        <button onClick={() => onChangeCustomize()}>I want my meme!</button>
       </div>
-
       <div>
+        <p />
         <img src={customizedMeme} alt="Meme" />
       </div>
     </div>
