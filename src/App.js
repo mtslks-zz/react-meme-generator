@@ -13,7 +13,7 @@ function Memegenerator() {
   const [memeArray, setMemeArray] = useState([]); // empty array to save objects from templates
   const [imageTemplate, setImageTemplate] = useState('morpheus');
 
-  // useEffect hook, very similar to componentDidMount/DidUpdate/WillUnmount as combination
+  // useEffect hook to fetch array and pass it into template Array
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -53,9 +53,10 @@ function Memegenerator() {
   // Rendering of the app
   return (
     <div>
-      <h1>Very basic looking React Meme Generator</h1>
+      <h1>The most basic meme generator on the www</h1>
       <div>
-        <label htmlFor="imageTemplate">Template meme: </label>
+        <label htmlFor="imageTemplate">1. Pick template: </label>
+        <p />
         <select
           id="image"
           placeholder="template image"
@@ -70,14 +71,24 @@ function Memegenerator() {
           ))}
         </select>
       </div>
-
-      <input htmlFor="Top Text" value={textTop} onChange={onChangeTextTop} />
+      <p />
+      2. Enter top & bottom text:
+      <p />
+      <input
+        htmlFor="Top Text"
+        value={textTop}
+        onChange={onChangeTextTop}
+        placeholder="Enter top text..."
+      />
+      <p />
       <input
         htmlFor="Bottom Text"
         value={textBottom}
         onChange={onChangeTextBottom}
+        placeholder="Enter bottom text..."
       />
       <p />
+      3. Generate your custom meme: <p />
       <div>
         <button onClick={() => onChangeCustomize()}>I want my meme!</button>
       </div>
