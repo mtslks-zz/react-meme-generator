@@ -62,17 +62,21 @@ export default function Memegenerator() {
     <div>
       <div
         css={css({
-          padding: 10,
-          borderRadius: '3px',
+          margin: 20,
+          padding: 20,
+          borderRadius: '10px',
+          borderStyle: 'solid',
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'left',
-          alignItems: 'left',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'navy',
         })}
       >
         <div>
           <label htmlFor="imageTemplate">
-            <b>1. Pick template: </b>
+            <strong>1. Pick template: </strong>
+            <p />
           </label>
           <select
             id="image"
@@ -89,36 +93,28 @@ export default function Memegenerator() {
           </select>
         </div>
       </div>
+
       <div
         css={css({
-          padding: 10,
-          borderRadius: '3px',
+          margin: 20,
+          padding: 20,
+          borderRadius: '10px',
+          borderStyle: 'solid',
           display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'left',
-          alignItems: 'left',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'navy',
         })}
       >
-        <div>
-          <b>2. Enter top and bottom text: </b> <p />
-          <input
-            htmlFor="Top Text"
-            value={textTop}
-            onChange={onChangeTextTop}
-            placeholder="Enter top text..."
-          />
-        </div>
-      </div>
-      <div
-        css={css({
-          padding: 10,
-          borderRadius: '3px',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'left',
-          alignItems: 'left',
-        })}
-      >
+        <strong>2. Enter top and bottom text: </strong> <p />
+        <input
+          htmlFor="Top Text"
+          value={textTop}
+          onChange={onChangeTextTop}
+          placeholder="Enter top text..."
+        />
+        <p />
         <input
           htmlFor="Bottom Text"
           value={textBottom}
@@ -126,36 +122,46 @@ export default function Memegenerator() {
           placeholder="Enter bottom text..."
         />
       </div>
+
       <div
         css={css({
-          padding: 10,
-          borderRadius: '3px',
+          margin: 20,
+          padding: 20,
+          borderRadius: '10px',
+          borderStyle: 'solid',
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'left',
-          alignItems: 'left',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'navy',
         })}
       >
         <div>
-          <b>3. Generate your custom meme: </b>
+          <strong>3. Generate your custom meme: </strong>
           <p />
           <div>
-            <button onClick={() => onChangeCustomize()}>I want my meme!</button>{' '}
-            <button onClick={() => onClickDownload()}>Download meme!</button>
+            <button onClick={() => onChangeCustomize()}>Customize meme!</button>
+            <p />
           </div>
         </div>
       </div>
       <div
         css={css({
-          padding: 10,
-          borderRadius: '3px',
+          margin: 20,
+          padding: 20,
+          borderRadius: '10px',
+          borderStyle: 'solid',
           display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'right',
-          alignItems: 'right',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'navy',
         })}
       >
         <img src={customizedMeme} alt="Meme" width="50%" height="50%" />
+        <p />
+        ...and if you want to keep it as a souvenir, click here: <p />
+        <button onClick={() => onClickDownload()}>Download meme </button>
       </div>
     </div>
   );
