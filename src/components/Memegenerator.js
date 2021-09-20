@@ -1,5 +1,5 @@
-// /** @jsxImportSource @emotion/react */
-// import { css } from '@emotion/react';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import { saveAs } from 'file-saver';
 import { useEffect, useState } from 'react';
 
@@ -60,48 +60,102 @@ export default function Memegenerator() {
   // Rendering of the app
   return (
     <div>
-      <div>
-        <label htmlFor="imageTemplate">1. Pick template: </label>
-        <p />
-        <select
-          id="image"
-          placeholder="template image"
-          // displays image, will show new image on change
-          value={imageTemplate}
-          onChange={onChangeImageTemplate}
-        >
-          {memeArray.map((item) => (
-            <option value={item.id} key={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
+      <div
+        css={css({
+          padding: 10,
+          borderRadius: '3px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'left',
+          alignItems: 'left',
+        })}
+      >
+        <div>
+          <label htmlFor="imageTemplate">
+            <b>1. Pick template: </b>
+          </label>
+          <select
+            id="image"
+            placeholder="template image"
+            // displays image, will show new image on change
+            value={imageTemplate}
+            onChange={onChangeImageTemplate}
+          >
+            {memeArray.map((item) => (
+              <option value={item.id} key={item.id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <p />
-      2. Enter top & bottom text:
-      <p />
-      <input
-        htmlFor="Top Text"
-        value={textTop}
-        onChange={onChangeTextTop}
-        placeholder="Enter top text..."
-      />
-      <p />
-      <input
-        htmlFor="Bottom Text"
-        value={textBottom}
-        onChange={onChangeTextBottom}
-        placeholder="Enter bottom text..."
-      />
-      <p />
-      3. Generate your custom meme: <p />
-      <div>
-        <button onClick={() => onChangeCustomize()}>I want my meme!</button>
-        <button onClick={() => onClickDownload()}>Download meme!</button>
+      <div
+        css={css({
+          padding: 10,
+          borderRadius: '3px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'left',
+          alignItems: 'left',
+        })}
+      >
+        <div>
+          <b>2. Enter top and bottom text: </b> <p />
+          <input
+            htmlFor="Top Text"
+            value={textTop}
+            onChange={onChangeTextTop}
+            placeholder="Enter top text..."
+          />
+        </div>
       </div>
-      <div>
-        <p />
-        <img src={customizedMeme} alt="Meme" />
+      <div
+        css={css({
+          padding: 10,
+          borderRadius: '3px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'left',
+          alignItems: 'left',
+        })}
+      >
+        <input
+          htmlFor="Bottom Text"
+          value={textBottom}
+          onChange={onChangeTextBottom}
+          placeholder="Enter bottom text..."
+        />
+      </div>
+      <div
+        css={css({
+          padding: 10,
+          borderRadius: '3px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'left',
+          alignItems: 'left',
+        })}
+      >
+        <div>
+          <b>3. Generate your custom meme: </b>
+          <p />
+          <div>
+            <button onClick={() => onChangeCustomize()}>I want my meme!</button>{' '}
+            <button onClick={() => onClickDownload()}>Download meme!</button>
+          </div>
+        </div>
+      </div>
+      <div
+        css={css({
+          padding: 10,
+          borderRadius: '3px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'right',
+          alignItems: 'right',
+        })}
+      >
+        <img src={customizedMeme} alt="Meme" width="50%" height="50%" />
       </div>
     </div>
   );
